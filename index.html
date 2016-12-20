@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="lensAssistant">
+
+<head>
+    <title>lensAssistant</title>
+    
+	<link href="bootstrap.css" rel="stylesheet" />
+    <link href="bootstrap-theme.css" rel="stylesheet" />
+	
+	<script src="angular.js"></script>  
+    <script src="ngmodules/angular-route.js"></script>
+	<script src="ui-bootstrap-tpls-2.3.1.min.js"></script>
+	
+	<script src="filters/customFilters.js"></script>
+    <script>
+        angular.module("lensAssistant", ["customFilters", "ngRoute"])
+        .config(function ($routeProvider) {           
+            $routeProvider.when("/addNewLenses", {
+                templateUrl: "/views/addNewLenses.html"
+            });
+
+            $routeProvider.when("/summary", {
+                templateUrl: "/views/lensesSummary.html"
+            });
+
+            $routeProvider.otherwise({
+                templateUrl: "/views/lensesSummary.html"
+            });
+        });
+    </script>
+	<script src="services/lensRepositoryService.js"></script>
+	<script src="controllers/lensesSummaryCtrl.js"></script>
+	<script src="controllers/addNewLensesController.js"></script>
+</head>
+
+<body ng-controller="lensesSummaryCtrl">
+
+    <div class="navbar navbar-inverse">
+        <a class="navbar-brand" href="#">Lens Assistant</a>
+        aaaa
+    </div>
+
+	<div class="row" ng-hide="data.error">
+		<!-- Left-side menu  -->
+		<div class="col-xs-3" style="border-left: 1px solid">
+			<a href="#/summary"
+			   class="btn btn-block btn-default btn-lg">Dashboard</a>
+			<a href="#/addNewLenses"
+			   class="btn btn-block btn-default btn-lg">Add new lenses</a>
+		</div>
+		
+		<!-- The list of lenses  -->
+		<div class="col-xs-8">
+			<ng-view />
+		</div>   
+   </div>
+	
+	<div class="alert alert-danger" ng-show="data.error">
+        Error ({{data.error.status}}). The product data was not loaded.
+        <a href="/app.html" class="alert-link">Click here to try again</a>
+    </div>
+</body>
+</html>
