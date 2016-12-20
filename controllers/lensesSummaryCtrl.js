@@ -7,5 +7,4 @@ angular.module("lensAssistant")
 			$scope.lensesSummary = lensRepositoryService.loadLensesSummary();
 		}
 	});
-
 });

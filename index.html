@@ -27,6 +27,18 @@
                 templateUrl: "/views/lensesSummary.html"
             });
         });
+        angular.module("lensAssistant")
+        .directive("lensForm", function() {
+            return {
+                link: function(scope, element, attrs) {},
+                restrict: "EA",
+                templateUrl: "/directives/lensForm.html",
+                replace: true,
+                scope: {
+                    lens: '=lensObject'
+                }
+            }
+        });
     </script>
 	<script src="services/lensRepositoryService.js"></script>
 	<script src="controllers/lensesSummaryCtrl.js"></script>
@@ -37,7 +49,6 @@
 
     <div class="navbar navbar-inverse">
         <a class="navbar-brand" href="#">Lens Assistant</a>
-        aaaa
     </div>
 
 	<div class="row" ng-hide="data.error">
@@ -52,7 +63,7 @@
 		<!-- The list of lenses  -->
 		<div class="col-xs-8">
 			<ng-view />
-		</div>   
+		</div> 
    </div>
 	
 	<div class="alert alert-danger" ng-show="data.error">

@@ -1,43 +1,14 @@
-﻿<div ng-controller="addNewLensesController">
+<div ng-controller="addNewLensesController">
 	<div class="row">
 		<div class="col-xs-1">
 		</div>
 		<div class="col-xs-4">
-			<div class="panel panel-default" style="border: 1px solid">
-				<div class="panel-heading">Left lens</div>
-				<div class="panel-body">
-					<div class="pull-left label label-primary"></div>
-					<div class="form-group">
-						<label>Name:</label>
-						<input name="leftLensName" type="text" class="form-control"
-							required ng-model="leftLens.name">
-					</div>
-					<div class="form-group">
-						<label>Valid to:</label>
-						<input name="leftLensValidTo" type="text" class="form-control"
-							required ng-model="leftLens.validTo">
-					</div>
-					<div class="form-group">
-						<label>Optic power:</label>
-		<!-- 				<input type="text" class="form-control" 
-							datepicker-popup="MM/yyyy" 
-							ng-model="dt" 
-							is-open="opened" 
-							datepicker-options="{minMode: 'month'}" 
-							datepicker-mode="'month'"/>
-						<span class="input-group-btn">
-							<button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-						</span> -->
-						
-						<input name="leftLensPower" type="text" class="form-control"
-							required ng-model="leftLens.power">
-					</div>
-					<div class="form-group">
-						<label>Amount:</label>
-						<input name="leftLensAmount" type="number" class="form-control" required ng-model="leftLens.amount">
-					</div>
-				</div>
-			</div>
+            <div class="panel panel-default" style="border: 1px solid">
+                <div class="panel-heading">Left lens</div>
+                <div class="panel-body">
+                    <lens-form lens-object="leftLens"/>  
+                </div>
+            </div>
 		</div>
 		<div class="col-xs-1">
 		</div>
@@ -45,49 +16,15 @@
 			<div class="panel panel-default" style="border: 1px dashed">
 				<div class="panel-heading">Right lens</div>
 				<div class="panel-body">
-				
 					<div ng-hide="rightLensPanelVisible">
 						<button ng-click="showRightLensPanel(true)" class="btn btn-block btn-default btn-sm">
 							+ Add same as left
 						</button>
-						
 						<button ng-click="showRightLensPanel(false)" class="btn btn-block btn-default btn-sm">
 							+ Add different
 						</button>
 					</div>
-					
-					<div ng-show="rightLensPanelVisible">
-						<div class="pull-left label label-primary"></div>
-						<div class="form-group">
-							<label>Name:</label>
-							<input name="rightLensName" type="text" class="form-control"
-								required ng-model="rightLens.name">
-						</div>
-						<div class="form-group">
-							<label>Valid to:</label>
-							<input name="rightLensValidTo" type="text" class="form-control"
-								required ng-model="rightLens.validTo">
-						</div>
-						<div class="form-group">
-							<label>Optic power:</label>
-			<!-- 				<input type="text" class="form-control" 
-								datepicker-popup="MM/yyyy" 
-								ng-model="dt" 
-								is-open="opened" 
-								datepicker-options="{minMode: 'month'}" 
-								datepicker-mode="'month'"/>
-							<span class="input-group-btn">
-								<button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-							</span> -->
-							
-							<input name="rightLensPower" type="text" class="form-control"
-								required ng-model="rightLens.power">
-						</div>
-						<div class="form-group">
-							<label>Amount:</label>
-							<input name="rightLensAmount" type="number" class="form-control" required ng-model="rightLens.amount">
-						</div>
-					</div>
+                    <lens-form lens-object="rightLens" ng-show="rightLensPanelVisible"/>  
 				</div>
 			</div>
 		</div>
