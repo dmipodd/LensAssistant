@@ -2,4 +2,4 @@
 
 The web application helps to account personal contact lenses.
 
-Application is constantly deployed to https://lensassistant.herokuapp.com/
+Application is continuously deployed to https://lensassistant.herokuapp.com/
