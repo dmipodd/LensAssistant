@@ -1,6 +1,7 @@
 .env
 .idea/
-*.iml 
+.iml
+helloworld.iml
 target/
 pom.xml.tag
 pom.xml.releaseBackup
