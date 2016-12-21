@@ -1,0 +1,39 @@
+<div ng-controller="addNewLensesController">
+	<div class="row">
+		<div class="col-xs-1">
+		</div>
+		<div class="col-xs-4">
+            <div class="panel panel-default" style="border: 1px solid">
+                <div class="panel-heading">Left lens</div>
+                <div class="panel-body">
+                    <lens-form lens-object="leftLens"/>  
+                </div>
+            </div>
+		</div>
+		<div class="col-xs-1">
+		</div>
+		<div class="col-xs-4">
+			<div class="panel panel-default" style="border: 1px dashed">
+				<div class="panel-heading">Right lens</div>
+				<div class="panel-body">
+					<div ng-hide="rightLensPanelVisible">
+						<button ng-click="showRightLensPanel(true)" class="btn btn-block btn-default btn-sm">
+							+ Add same as left
+						</button>
+						<button ng-click="showRightLensPanel(false)" class="btn btn-block btn-default btn-sm">
+							+ Add different
+						</button>
+					</div>
+                    <lens-form lens-object="rightLens" ng-show="rightLensPanelVisible"/>  
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-1">
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-10"> 
+			<a class="btn btn-primary pull-right" ng-click="saveNew()">Save</a>
+		</div>
+	</div>
+</div>

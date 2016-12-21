@@ -1,0 +1,23 @@
+<div class="alert alert-warning" ng-show="lensesSummary.length == 0">
+	There are no lenses currently.
+</div>
+
+<div ng-hide="lensesSummary.length == 0">
+	<div class="well" ng-repeat="item in lensesSummary">
+		<div class="row">
+			<div class="col-xs-5">
+				<h4>{{item.name}}</h4>
+			</div>
+			<div class="col-xs-5">
+				<h4>Valid to: <strong>{{item.validTo}}</strong></h4>
+			</div>
+			<div class="col-xs-2">
+				<h4><span class="pull-right label label-primary">{{item.power}}</span></h4>
+			</div>
+		</div>
+		<button ng-click="addProductToCart(item)" class="btn btn-success pull-right">
+			Start using
+		</button>
+        <h4><span>Left: <strong>{{item.count | pairs}}</strong></span></h4>
+	</div>   
+</div>
