@@ -6,7 +6,7 @@
             <div class="panel panel-default" style="border: 1px solid">
                 <div class="panel-heading">Left lens</div>
                 <div class="panel-body">
-                    <lens-form lens-object="leftLens"/>  
+                    <lens-form lens-object="leftLens" form-is-valid="leftLensFormIsValid" form-name="leftLensForm"/>
                 </div>
             </div>
 		</div>
@@ -24,7 +24,8 @@
 							+ Add different
 						</button>
 					</div>
-                    <lens-form lens-object="rightLens" ng-show="rightLensPanelVisible"/>  
+                    <lens-form lens-object="rightLens" ng-show="rightLensPanelVisible"
+                               form-is-valid="rightLensFormIsValid" form-name="rightLensForm"/>
 				</div>
 			</div>
 		</div>
@@ -32,8 +33,15 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-xs-10"> 
-			<a class="btn btn-primary pull-right" ng-click="saveNew()">Save</a>
+        <div class="col-xs-7">
+            Fields marked as * are required.
+            <div class="invalid-message"
+                  ng-show="!lensesFormsAreValid()">
+                Please correct input data.
+            </div>
+        </div>
+		<div class="col-xs-3">
+			<a class="btn btn-primary pull-right" ng-click="saveNew()" ng-disabled="!lensesFormsAreValid()">Save</a>
 		</div>
 	</div>
 </div>

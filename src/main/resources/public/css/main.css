@@ -1,0 +1,6 @@
+input.ng-invalid.ng-dirty {
+    background-color: lightpink;
+}
+div.invalid-message {
+    color: #c12e2a;
+}
