@@ -4,7 +4,7 @@
         if (angular.isNumber(data) && data > 0) {
 			var pairsCount = Math.floor(data / 2),
 				singlesCount = data % 2,
-				result;
+				result = '';
 			if (pairsCount > 0) {
 				result = pairsCount + (pairsCount === 1 ? " pair" : " pairs");
 				if (singlesCount > 0) {
