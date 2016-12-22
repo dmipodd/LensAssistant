@@ -50,7 +50,7 @@
           <descriptorRefs>
             <descriptorRef>jar-with-dependencies</descriptorRef>
           </descriptorRefs>
-          <finalName>helloworld</finalName>
+          <finalName>lens-assistant</finalName>
           <appendAssemblyId>false</appendAssemblyId>
           <archive>
             <manifest>
